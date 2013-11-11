@@ -1,0 +1,9 @@
+_supervisorctl()
+{
+    COMPREPLY=( $( \
+        compgen -W "add clear fg open quit remove restart start stop update \
+            avail exit maintail pid reload reread shutdown status tail version" \
+                ${COMP_WORDS[COMP_CWORD]} \
+    ) )
+}
+complete -F _supervisorctl supervisorctl
